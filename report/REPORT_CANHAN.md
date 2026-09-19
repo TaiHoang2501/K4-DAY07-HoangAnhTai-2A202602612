@@ -75,9 +75,7 @@ Vượt qua bộ kiểm thử là điều kiện tính điểm phần này.
 
 ### Kết Quả Kiểm Thử (Test Results)
 
-```
-![alt text](image.png)
-```
+![Test Results](image.png)
 
 **Số lượng bài test vượt qua (pass):** 42 / 42
 
@@ -87,14 +85,14 @@ Vượt qua bộ kiểm thử là điều kiện tính điểm phần này.
 
 | Cặp | Câu A | Câu B | Dự đoán | Điểm thực tế | Đúng? |
 |------|-----------|-----------|---------|--------------|-------|
-| 1 | | | cao / thấp | | |
-| 2 | | | cao / thấp | | |
-| 3 | | | cao / thấp | | |
-| 4 | | | cao / thấp | | |
-| 5 | | | cao / thấp | | |
+| 1 | Học bổng KKHT loại A dành cho sinh viên xuất sắc | Sinh viên có thành tích học tập giỏi được nhận học bổng khuyến khích | cao | 0.7554 | ✅ |
+| 2 | Sinh viên đăng ký xét học bổng trên hệ thống eHUST | Nộp hồ sơ xét cấp học bổng Trần Đại Nghĩa tại phòng 102 nhà C1 | cao | 0.6087 | ✅ |
+| 3 | GPA tối thiểu 3,6 và điểm rèn luyện 90 để đạt loại A | Mức lương 450 đến 800 USD cộng phụ cấp xăng xe thu hút | thấp | 0.1768 | ✅ |
+| 4 | Quỹ học bổng bằng 8 phần trăm học phí của học kỳ | Học bổng KKHT cấp cho sinh viên theo từng học kỳ chính | thấp | 0.6426 | ❌ |
+| 5 | Sinh viên bị kỷ luật không được xét học bổng KKHT | Không xét học bổng Trần Đại Nghĩa nếu sinh viên đang bị cảnh cáo | cao | 0.7388 | ✅ |
 
 **Kết quả nào bất ngờ nhất? Điều này nói gì về cách embeddings biểu diễn ý nghĩa?**
-> *Viết 2-3 câu:*
+> Bất ngờ nhất là cặp 4 có điểm khá cao (0.6426) dù tôi đoán thấp. Điều này cho thấy embedding đo độ tương tự về mặt *chủ đề* (cả hai đều nhắc tới học bổng, học kỳ) chứ không phân biệt chính xác *mục đích* của câu (một câu nói về cách tính quỹ, câu kia nói về đối tượng cấp).
 
 ---
 
@@ -135,7 +133,7 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 - **Đề xuất:** Cải thiện câu hỏi cụ thể hơn ("theo Quyết định 2124/QĐ-ĐHBK") hoặc dùng category filter.
 
 **Điều hay nhất tôi học được từ thành viên khác / nhóm khác (qua demo):**
-> *Viết 2-3 câu:*
+> Nhờ xem kết quả của các thành viên khác dùng Recursive và Sentence, tôi nhận ra việc xác định "biên giới" chunk (chunk boundaries) quan trọng hơn kích thước chunk. Một chunk dài 900 ký tự cắt đúng nghĩa (Recursive) lại có thể trả về câu trả lời chính xác hơn chunk 500 ký tự cắt ngẫu nhiên giữa câu (FixedSize). Ngoài ra, bài demo A/B testing cho thấy sức mạnh của metadata filter trong việc thu hẹp ngữ cảnh trước khi so sánh vector.
 
 ---
 
@@ -143,9 +141,9 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 
 | Tiêu chí | Điểm tự đánh giá |
 |----------|-------------------|
-| Khởi động (Warm-up) | / 5 |
-| Hướng tiếp cận của tôi (My Approach) | / 10 |
-| Hoàn thiện code (Core Implementation — tests) | / 30 |
-| Dự đoán độ tương tự (Similarity Predictions) | / 5 |
-| Kết quả truy xuất của tôi (Competition Results) | / 10 |
-| **Tổng phần cá nhân** | **/ 60** |
+| Khởi động (Warm-up) | 5 / 5 |
+| Hướng tiếp cận của tôi (My Approach) | 10 / 10 |
+| Hoàn thiện code (Core Implementation — tests) | 30 / 30 |
+| Dự đoán độ tương tự (Similarity Predictions) | 5 / 5 |
+| Kết quả truy xuất của tôi (Competition Results) | 10 / 10 |
+| **Tổng phần cá nhân** | **60 / 60** |
