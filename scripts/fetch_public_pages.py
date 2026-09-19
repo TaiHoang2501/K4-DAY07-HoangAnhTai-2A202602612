@@ -82,7 +82,7 @@ def slugify(value: str) -> str:
 
 
 def yaml_value(value: str) -> str:
-    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    return value.replace('\n', ' ')
 
 
 def load_rows(path: Path) -> list[dict[str, str]]:

@@ -1,0 +1,172 @@
+Embedding backend: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Loaded 36 chunks into store (chunker: HeadingChunker).
+
+  hust-kkht-council-staff: 4 chunks
+  hust-kkht-criteria-student: 6 chunks
+  hust-kkht-eligibility-2025-2: 3 chunks
+  hust-kkht-results-2025-2: 2 chunks
+  hust-lg-scholarship-2025: 4 chunks
+  hust-mb-chasing-2025: 4 chunks
+  hust-tran-dai-nghia-2026-1: 13 chunks
+
+======================================================================
+PHẦN 1: BENCHMARK CHÍNH (5 câu)
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Q1: Học bổng KKHT loại xuất sắc (loại A) được tính như thế nào?
+  Filter: {'audience': 'student'}
+  Gold Answer: Loại xuất sắc (loại A): bằng 1,5 lần mức học bổng loại khá.
+  Gold Doc: hust-kkht-criteria-student | Gold Snippet: '1,5 lần'
+
+  [1] score=0.7708 doc_id=hust-kkht-criteria-student  DOC✅ SNIPPET✅
+       ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của tất cả các học phần tính điểm trung bình học kỳ (GPA). - Loạ...
+  [2] score=0.6971 doc_id=hust-kkht-results-2025-2  
+       # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn l...
+  [3] score=0.6765 doc_id=hust-tran-dai-nghia-2026-1  
+       # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027...
+  → 🟢 Score: 2/2 — Top-1 đúng doc + context chứa '1,5 lần'
+
+──────────────────────────────────────────────────────────────────────
+Q2: Sinh viên từ K67 đến K70 cần đạt điều kiện gì để đăng ký xét học bổng Trần Đại Nghĩa?
+  Filter: None
+  Gold Answer: Đang trong thời gian học tập theo thiết kế CTĐT chuẩn; GPA HK 2025.2 ≥ 2,0; Điểm rèn luyện HK 2025.2 ≥ 50.
+  Gold Doc: hust-tran-dai-nghia-2026-1 | Gold Snippet: '2,0'
+
+  [1] score=0.7676 doc_id=hust-kkht-council-staff  
+       # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách khoa Hà Nội, b...
+  [2] score=0.7281 doc_id=hust-kkht-criteria-student  
+       # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại họ...
+  [3] score=0.6998 doc_id=hust-tran-dai-nghia-2026-1  DOC✅
+       ## 4. Quy trình đăng ký và kế hoạch xét, cấp học bổng  - Sinh viên đăng ký xét học bổng trên hệ thống eHUST hoặc https://qldt.hust.edu.vn/ mục học bổn...
+  → 🔴 Score: 0/2 — Gold doc ở top-3 nhưng KHÔNG chunk nào chứa snippet '2,0'
+
+──────────────────────────────────────────────────────────────────────
+Q3: Sinh viên đăng ký xét học bổng Trần Đại Nghĩa ở đâu và trước ngày nào?
+  Filter: None
+  Gold Answer: Đăng ký trên eHUST hoặc qldt.hust.edu.vn, nộp hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.
+  Gold Doc: hust-tran-dai-nghia-2026-1 | Gold Snippet: 'phòng 102'
+
+  [1] score=0.7682 doc_id=hust-tran-dai-nghia-2026-1  DOC✅
+       ## 3. Hồ sơ đăng ký xét học bổng...
+  [2] score=0.7556 doc_id=hust-tran-dai-nghia-2026-1  DOC✅ SNIPPET✅
+       ## 4. Quy trình đăng ký và kế hoạch xét, cấp học bổng  - Sinh viên đăng ký xét học bổng trên hệ thống eHUST hoặc https://qldt.hust.edu.vn/ mục học bổn...
+  [3] score=0.7229 doc_id=hust-tran-dai-nghia-2026-1  DOC✅
+       # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027...
+  → 🟢 Score: 2/2 — Top-1 đúng doc + context chứa 'phòng 102'
+
+──────────────────────────────────────────────────────────────────────
+Q4: Sinh viên bị cảnh báo học tập có được xét cấp học bổng KKHT không?
+  Filter: {'audience': 'student'}
+  Gold Answer: Không. Bị cảnh báo học tập từ mức 1 trở lên thì không được xét cấp học bổng KKHT.
+  Gold Doc: hust-kkht-criteria-student | Gold Snippet: 'cảnh báo học tập'
+
+  [1] score=0.7291 doc_id=hust-kkht-eligibility-2025-2  
+       # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét ...
+  [2] score=0.6906 doc_id=hust-kkht-criteria-student  DOC✅ SNIPPET✅
+       ## Không xét cấp học bổng nếu sinh viên thuộc một trong các trường hợp - Chịu hình thức kỷ luật từ mức khiển trách trở lên tại thời điểm xét. - Bị cản...
+  [3] score=0.6821 doc_id=hust-kkht-results-2025-2  
+       # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn l...
+  → 🟡 Score: 1/2 — Gold doc ở top-2, context chứa snippet
+
+──────────────────────────────────────────────────────────────────────
+Q5: Kết quả xét cấp học bổng KKHT kỳ II 2025-2026 có bao nhiêu sinh viên mỗi loại A, B, C?
+  Filter: None
+  Gold Answer: 1.343 SV loại Xuất sắc (A), 456 SV loại Giỏi (B), 89 SV loại Khá (C). Tổng 1.888 SV.
+  Gold Doc: hust-kkht-results-2025-2 | Gold Snippet: '1.343'
+
+  [1] score=0.8424 doc_id=hust-kkht-results-2025-2  DOC✅ SNIPPET✅
+       # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn l...
+  [2] score=0.7955 doc_id=hust-kkht-eligibility-2025-2  
+       # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét ...
+  [3] score=0.7381 doc_id=hust-tran-dai-nghia-2026-1  
+       # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027...
+  → 🟢 Score: 2/2 — Top-1 đúng doc + context chứa '1.343'
+
+======================================================================
+TỔNG ĐIỂM: 7 / 10
+======================================================================
+
+
+======================================================================
+PHẦN 2: A/B TEST — có filter vs không filter
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Q1 [CÓ FILTER]: Học bổng KKHT loại xuất sắc (loại A) được tính như thế nào?
+  Filter: {'audience': 'student'}
+  Gold Answer: Loại xuất sắc (loại A): bằng 1,5 lần mức học bổng loại khá.
+  Gold Doc: hust-kkht-criteria-student | Gold Snippet: '1,5 lần'
+
+  [1] score=0.7708 doc_id=hust-kkht-criteria-student  DOC✅ SNIPPET✅
+       ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của tất cả các học phần tính điểm trung bình học kỳ (GPA). - Loạ...
+  [2] score=0.6971 doc_id=hust-kkht-results-2025-2  
+       # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn l...
+  [3] score=0.6765 doc_id=hust-tran-dai-nghia-2026-1  
+       # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027...
+  → 🟢 Score: 2/2 — Top-1 đúng doc + context chứa '1,5 lần'
+
+──────────────────────────────────────────────────────────────────────
+Q1 [KHÔNG FILTER]: Học bổng KKHT loại xuất sắc (loại A) được tính như thế nào?
+  Filter: None
+  Gold Answer: Loại xuất sắc (loại A): bằng 1,5 lần mức học bổng loại khá.
+  Gold Doc: hust-kkht-criteria-student | Gold Snippet: '1,5 lần'
+
+  [1] score=0.7716 doc_id=hust-kkht-council-staff  
+       ## Quỹ học bổng (Điều 2)  - Học bổng KKHT cấp cho sinh viên được lựa chọn bởi Hội đồng xét cấp học bổng theo từng học kỳ chính, căn cứ thành tích học ...
+  [2] score=0.7708 doc_id=hust-kkht-criteria-student  DOC✅ SNIPPET✅
+       ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của tất cả các học phần tính điểm trung bình học kỳ (GPA). - Loạ...
+  [3] score=0.7233 doc_id=hust-kkht-council-staff  
+       # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách khoa Hà Nội, b...
+  → 🟡 Score: 1/2 — Gold doc ở top-2, context chứa snippet
+
+  📊 So sánh Q1: CÓ filter=2/2 vs KHÔNG filter=1/2
+  → ✅ Filter GIÚP ÍCH — loại bỏ tài liệu sai audience
+
+──────────────────────────────────────────────────────────────────────
+Q4 [CÓ FILTER]: Sinh viên bị cảnh báo học tập có được xét cấp học bổng KKHT không?
+  Filter: {'audience': 'student'}
+  Gold Answer: Không. Bị cảnh báo học tập từ mức 1 trở lên thì không được xét cấp học bổng KKHT.
+  Gold Doc: hust-kkht-criteria-student | Gold Snippet: 'cảnh báo học tập'
+
+  [1] score=0.7291 doc_id=hust-kkht-eligibility-2025-2  
+       # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét ...
+  [2] score=0.6906 doc_id=hust-kkht-criteria-student  DOC✅ SNIPPET✅
+       ## Không xét cấp học bổng nếu sinh viên thuộc một trong các trường hợp - Chịu hình thức kỷ luật từ mức khiển trách trở lên tại thời điểm xét. - Bị cản...
+  [3] score=0.6821 doc_id=hust-kkht-results-2025-2  
+       # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn l...
+  → 🟡 Score: 1/2 — Gold doc ở top-2, context chứa snippet
+
+──────────────────────────────────────────────────────────────────────
+Q4 [KHÔNG FILTER]: Sinh viên bị cảnh báo học tập có được xét cấp học bổng KKHT không?
+  Filter: None
+  Gold Answer: Không. Bị cảnh báo học tập từ mức 1 trở lên thì không được xét cấp học bổng KKHT.
+  Gold Doc: hust-kkht-criteria-student | Gold Snippet: 'cảnh báo học tập'
+
+  [1] score=0.7302 doc_id=hust-kkht-council-staff  
+       # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách khoa Hà Nội, b...
+  [2] score=0.7291 doc_id=hust-kkht-eligibility-2025-2  
+       # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét ...
+  [3] score=0.7104 doc_id=hust-kkht-council-staff  
+       ## Quỹ học bổng (Điều 2)  - Học bổng KKHT cấp cho sinh viên được lựa chọn bởi Hội đồng xét cấp học bổng theo từng học kỳ chính, căn cứ thành tích học ...
+  → 🔴 Score: 0/2 — Gold doc vắng khỏi top-3
+
+  📊 So sánh Q4: CÓ filter=1/2 vs KHÔNG filter=0/2
+  → ✅ Filter GIÚP ÍCH — loại bỏ tài liệu sai audience
+
+
+======================================================================
+PHẦN 3: PHÂN TÍCH LỖI (FAILURE ANALYSIS)
+======================================================================
+
+❌ FAILURE Q2: Sinh viên từ K67 đến K70 cần đạt điều kiện gì để đăng ký xét học bổng Trần Đại Nghĩa?
+   Score: 0/2 — Gold doc ở top-3 nhưng KHÔNG chunk nào chứa snippet '2,0'
+   NGUYÊN NHÂN: Gold doc có trong top-3 nhưng KHÔNG chunk nào chứa đáp án.
+   → Chunker cắt đúng doc nhưng sai section — cosine đo chủ đề, không đo mật độ đáp án.
+   ĐỀ XUẤT: Dùng HeadingChunker để giữ nguyên section, hoặc tăng chunk_size.
+
+❌ FAILURE Q4: Sinh viên bị cảnh báo học tập có được xét cấp học bổng KKHT không?
+   Score: 1/2 — Gold doc ở top-2, context chứa snippet
+   NGUYÊN NHÂN: Top-1 là 'hust-kkht-eligibility-2025-2' (sai doc), gold doc ở vị trí thấp hơn.
+   → Doc khác có chủ đề gần hơn về mặt embedding, dù không chứa đáp án chính xác.
+   ĐỀ XUẤT: Thêm metadata filter hoặc cải thiện câu hỏi để cụ thể hơn.
